@@ -10,7 +10,13 @@ use Illuminate\Database\QueryException;
 class ctrlCategorias extends Controller
 {
     public function Categorias(){
-        $category = Category::all();              // 1. obtener todas las categorías
+        try {
+            $category = Category::all();
+        } catch (QueryException $e) {
+            session()->now('error', 'La tabla categories aun no existe en Railway. Ejecuta las migraciones y vuelve a desplegar.');
+            $category = collect();
+        }
+
         Return view('vistaCategorias')->with(compact('category')); // 2. enviarlas a la vista
     }
 

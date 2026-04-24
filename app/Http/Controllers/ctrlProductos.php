@@ -4,11 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Database\QueryException;
 
 class ctrlProductos extends Controller
 {
     public function Productos(){
-        $product = Product::with('category')->get();              // 1. obtener productos con su categoría
+        try {
+            $product = Product::with('category')->get();
+        } catch (QueryException $e) {
+            session()->now('error', 'La tabla products o categories aun no existe en Railway. Ejecuta las migraciones y vuelve a desplegar.');
+            $product = collect();
+        }
+
         Return view('vistaProductos')->with(compact('product')); // 2. enviarlos a la vista
     }
 

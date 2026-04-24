@@ -4,12 +4,19 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Database\QueryException;
 use Illuminate\Support\Facades\Http;
 
 class ctrlDatos extends Controller
 {
     public function AccesoDatosVista(){
-        $pro = Product::all();              // 1. obtener todos los productos
+        try {
+            $pro = Product::all();
+        } catch (QueryException $e) {
+            session()->now('error', 'La tabla products aun no existe en Railway. Ejecuta las migraciones y vuelve a desplegar.');
+            $pro = collect();
+        }
+
         Return view('vistaDatos')->with(compact('pro')); // 2. enviarlos a la vista
     }
 
