@@ -1,0 +1,52 @@
+services:
+  - type: web
+    name: lara23
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    preDeployCommand: php artisan migrate --force
+    dockerCommand: php artisan serve --host=0.0.0.0 --port=$PORT
+    healthCheckPath: /up
+    autoDeployTrigger: commit
+    envVars:
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_URL
+        value: https://lara23.onrender.com
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: LOG_LEVEL
+        value: info
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_HOST
+        fromDatabase:
+          name: lara23-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: lara23-db
+          property: port
+      - key: DB_DATABASE
+        fromDatabase:
+          name: lara23-db
+          property: database
+      - key: DB_USERNAME
+        fromDatabase:
+          name: lara23-db
+          property: user
+      - key: DB_PASSWORD
+        fromDatabase:
+          name: lara23-db
+          property: password
+
+databases:
+  - name: lara23-db
+    databaseName: lara23
+    user: lara23_user
+    plan: free

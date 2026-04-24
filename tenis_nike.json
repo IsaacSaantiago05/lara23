@@ -1,0 +1,142 @@
+{
+  "marca": "Nike",
+  "categoria": "calzado",
+  "moneda": "USD",
+  "ultima_actualizacion": "2026-04-13",
+  "productos": [
+    {
+      "id": 1,
+      "nombre": "Nike Air Force 1 '07",
+      "tipo": "urbano",
+      "genero": "unisex",
+      "descripcion": "Zapatilla clásica con diseño icónico y gran durabilidad.",
+      "colores_disponibles": ["blanco", "negro", "blanco/negro"],
+      "precio": 120,
+      "descuento": 0.1,
+      "stock": 50,
+      "tallas_disponibles": [38, 39, 40, 41, 42, 43, 44],
+      "material": {
+        "exterior": "cuero",
+        "suela": "goma"
+      },
+      "caracteristicas": [
+        "amortiguación Air",
+        "diseño clásico",
+        "resistente al desgaste"
+      ],
+      "envio": {
+        "gratis": true,
+        "tiempo_estimado_dias": 3
+      },
+      "valoracion": 4.8
+    },
+    {
+      "id": 2,
+      "nombre": "Nike Air Max 90",
+      "tipo": "running",
+      "genero": "hombre",
+      "descripcion": "Zapatilla con excelente amortiguación y estilo retro.",
+      "colores_disponibles": ["negro/rojo", "gris/azul"],
+      "precio": 140,
+      "descuento": 0.15,
+      "stock": 35,
+      "tallas_disponibles": [39, 40, 41, 42, 43, 44, 45],
+      "material": {
+        "exterior": "malla y sintético",
+        "suela": "goma"
+      },
+      "caracteristicas": [
+        "unidad Air visible",
+        "transpirable",
+        "ligero"
+      ],
+      "envio": {
+        "gratis": false,
+        "tiempo_estimado_dias": 5
+      },
+      "valoracion": 4.7
+    },
+    {
+      "id": 3,
+      "nombre": "Nike Revolution 6",
+      "tipo": "deportivo",
+      "genero": "mujer",
+      "descripcion": "Ideal para entrenamientos diarios con gran comodidad.",
+      "colores_disponibles": ["azul", "rosa", "negro"],
+      "precio": 80,
+      "descuento": 0.05,
+      "stock": 60,
+      "tallas_disponibles": [36, 37, 38, 39, 40, 41],
+      "material": {
+        "exterior": "textil",
+        "suela": "espuma"
+      },
+      "caracteristicas": [
+        "ligero",
+        "flexible",
+        "económico"
+      ],
+      "envio": {
+        "gratis": true,
+        "tiempo_estimado_dias": 4
+      },
+      "valoracion": 4.5
+    },
+    {
+      "id": 4,
+      "nombre": "Nike ZoomX Vaporfly Next%",
+      "tipo": "running profesional",
+      "genero": "unisex",
+      "descripcion": "Diseñada para velocidad y alto rendimiento en competición.",
+      "colores_disponibles": ["verde", "naranja"],
+      "precio": 250,
+      "descuento": 0,
+      "stock": 20,
+      "tallas_disponibles": [40, 41, 42, 43, 44],
+      "material": {
+        "exterior": "Flyknit",
+        "suela": "goma con placa de carbono"
+      },
+      "caracteristicas": [
+        "placa de carbono",
+        "máxima reactividad",
+        "ultraligero"
+      ],
+      "envio": {
+        "gratis": true,
+        "tiempo_estimado_dias": 2
+      },
+      "valoracion": 4.9
+    },
+    {
+      "id": 5,
+      "nombre": "Nike Dunk Low",
+      "tipo": "urbano",
+      "genero": "unisex",
+      "descripcion": "Modelo icónico con gran popularidad en streetwear.",
+      "colores_disponibles": ["blanco/verde", "blanco/azul", "negro/blanco"],
+      "precio": 110,
+      "descuento": 0.08,
+      "stock": 45,
+      "tallas_disponibles": [38, 39, 40, 41, 42, 43],
+      "material": {
+        "exterior": "cuero",
+        "suela": "goma"
+      },
+      "caracteristicas": [
+        "estilo retro",
+        "comodidad diaria",
+        "versátil"
+      ],
+      "envio": {
+        "gratis": false,
+        "tiempo_estimado_dias": 3
+      },
+      "valoracion": 4.6
+    }
+  ],
+  "contacto": {
+    "soporte_email": "soporte@nike.com",
+    "telefono": "+1-800-806-6453"
+  }
+}
