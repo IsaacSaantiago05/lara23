@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Categorias</title>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Categorias
+        </h2>
+    </x-slot>
+
     <style>
         :root {
             --bg: #f5f7fb;
@@ -22,13 +23,6 @@
         }
 
         * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background: var(--bg);
-            color: var(--text);
-        }
-
         .container {
             max-width: 1000px;
             margin: 24px auto;
@@ -136,8 +130,7 @@
             font-size: 13px;
         }
     </style>
-</head>
-<body>
+
     <div class="container">
         <div class="card">
             <h1>Categorias</h1>
@@ -195,5 +188,4 @@
             <p class="muted">Total de categorias: {{ count($category) }}</p>
         </div>
     </div>
-</body>
-</html>
+</x-app-layout>
