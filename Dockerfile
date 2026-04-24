@@ -1,7 +1,9 @@
 FROM php:8.3-cli
 
 RUN apt-get update \
-    && apt-get install -y --no-install-recommends git unzip libpq-dev libzip-dev \
+    && apt-get install -y --no-install-recommends git unzip curl libpq-dev libzip-dev \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y --no-install-recommends nodejs \
     && docker-php-ext-install pdo pdo_pgsql zip \
     && rm -rf /var/lib/apt/lists/*
 
@@ -13,6 +15,8 @@ COPY composer.json composer.lock ./
 RUN composer install --no-dev --prefer-dist --optimize-autoloader --no-interaction --no-scripts
 
 COPY . .
+
+RUN npm ci && npm run build
 
 EXPOSE 10000
 
